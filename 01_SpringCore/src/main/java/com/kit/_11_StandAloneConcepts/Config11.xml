@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- Stand alone list-->
+	<util:list list-class="java.util.LinkedList" id="x">
+		<value>AUUDi</value>
+		<value>Swift</value>
+	</util:list>
+	<util:set set-class="java.util.TreeSet" id="y">
+		<value>raj@gmail.com</value>
+		<value>Deva@gmail.com</value>
+	</util:set>
+	<util:map map-class="java.util.LinkedHashMap" id="z">
+		<entry key="Mohan" value="Raj" />
+		<entry key="Deva" value="Swamy" />
+	</util:map>
+	<util:properties id="i">
+		<prop key="uId">root</prop>
+		<prop key="Password">root</prop>
+	</util:properties>
+	<bean class="com.kit._11_StandAloneConcepts.Employ" name="emp1">
+		<property name="Vehecle" ref="x"></property>
+		<property name="email" ref="y"></property>
+		<property name="name" ref="z"></property>
+		<property name="dbprop" ref="i"></property>
+	</bean>
+	<bean class="com.kit._11_StandAloneConcepts.Employ" name="emp2">
+				<property name="Vehecle" ref="x"></property>
+	</bean>
+</beans>

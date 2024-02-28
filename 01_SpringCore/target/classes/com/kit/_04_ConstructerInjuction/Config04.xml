@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!--
+		<bean class="com.kit.Constructerrefrence.Emp" name="emp1">
+		<constructor-arg>
+			<value>Devaaa</value>
+		</constructor-arg>
+		<constructor-arg value="12333" />
+		<constructor-arg>
+			<value>5000</value>
+		</constructor-arg>
+	</bean> -->
+	<bean class="com.kit._04_ConstructerInjuction.Dep" name="emp1"
+		c:dName="Trainig"></bean>
+	<bean class="com.kit._04_ConstructerInjuction.Emp" name="emp2">
+		<constructor-arg value="Devvaa" />
+		<constructor-arg value="233" />
+		<constructor-arg value="50000" />
+		<constructor-arg ref="emp1" />
+	</bean>
+</beans>
+

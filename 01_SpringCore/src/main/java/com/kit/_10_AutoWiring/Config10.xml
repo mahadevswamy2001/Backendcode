@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!-- It Activates the all annotatin of Spring-->
+	<context:annotation-config />
+	<bean class="com.kit._10_AutoWiring.Student" name="stud"></bean>
+	<bean class=" com.kit._10_AutoWiring.Certificate" name="cirti1"
+		p:cName="Java " p:Duration="4" />
+	<bean class=" com.kit._10_AutoWiring.Certificate" name="cirti"
+		p:cName="Spring " p:Duration="4" />
+	<!-- Injuction based on Byname  The name of class n reff  Shoud be Smae-->
+	<!-- 	<bean class="org.kit._10_AutoWiring.Student" name="stud"
+	autowire="byName"></bean> -->
+	<!-- Injuction based on Bytype-->
+	<!-- <bean class="org.kit._10_AutoWiring.Student" name="stud"
+	autowire="byType"></bean> -->
+	<!-- Injuction based on constructor-->
+	<!-- 	<bean class="org.kit._10_AutoWiring.Student" name="stud"
+		autowire="constructor"></bean> -->
+</beans>

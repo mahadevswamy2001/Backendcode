@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- DataSource Configuration -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		name="ds">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/student" />
+		<property name="username" value="root" />
+		<property name="password" value="Root" />
+	</bean>
+	<!-- JdbcTemplate Configuration -->
+	<bean class="org.springframework.jdbc.core.JdbcTemplate" name="jdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+	<bean class="com.kit.daoClass.StudentImp" name="student1">
+		<property name="jdbcTemplate1" ref="jdbcTemplate"></property>
+	</bean>
+	<bean class="com.kit.entityClass.Student" name="a" p:First_Name="maadev" ></bean>	
+	<!-- Student Bean Configuration
+    <bean class="Org.kit.SpringCurdOpration.Student" name="demo">
+        <property name="Usn" value="2121" />
+        <property name="Name" value="dds" />
+        <property name="City" value="Bdr" />
+    </bean> -->
+</beans>
+
